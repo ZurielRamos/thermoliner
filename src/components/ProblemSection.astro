@@ -1,0 +1,370 @@
+---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg-home-2.png';
+import personImage from '../assets/persona-home-2.png';
+---
+
+<section class="problem" id="nosotros">
+	<div class="problem__background">
+		<Image src={bgImage} alt="" class="problem__bg-image" />
+	</div>
+
+	<div class="problem__container">
+		<div class="problem__text">
+			<h2 class="problem__title">
+				<span class="problem__title-line">Nuestro Compromiso</span>
+				<span class="problem__title-line problem__title-line--highlight">con la Excelencia</span>
+			</h2>
+			<h3 class="problem__subtitle">Nuestra misión es ir más allá de la fabricación.</h3>
+			<p class="problem__description">
+				Somos un proveedor confiable de asientos para tus vehículos, combinando tecnología de vanguardia, diseños personalizados, robotización industrial y un proceso 100% asegurado en calidad; elaborados por un equipo humano comprometido con la excelencia y la satisfacción del cliente.
+			</p>
+
+			<div class="problem__stats">
+				<div class="problem__stat">
+					<div class="problem__stat-number">
+						<span class="problem__stat-prefix">+</span><span class="problem__stat-value" data-target="10">0</span><span class="problem__stat-suffix">Años</span>
+					</div>
+					<span class="problem__stat-label">de durabilidad</span>
+				</div>
+				<div class="problem__stat">
+					<div class="problem__stat-number">
+						<span class="problem__stat-value" data-target="70000" data-format="dots">0</span>
+					</div>
+					<span class="problem__stat-label">Asientos mensuales</span>
+				</div>
+				<div class="problem__stat">
+					<div class="problem__stat-number">
+						<span class="problem__stat-value" data-target="12000" data-format="dots">0</span><span class="problem__stat-suffix">KM</span>
+					</div>
+					<span class="problem__stat-label">Ó 1 año de Garantía</span>
+				</div>
+			</div>
+
+			<a href="/contacto" class="problem__cta">Agenda una consulta técnica</a>
+		</div>
+
+		<div class="problem__image">
+			<div class="problem__image-frame">
+				<Image src={personImage} alt="Técnico sosteniendo un asiento Thermoliner" class="problem__person" />
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.problem {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		clip-path: inset(0);
+	}
+
+	.problem__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.problem__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.problem__container {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: end;
+		gap: 4rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 3rem 4rem 0;
+	}
+
+	.problem__text {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding-bottom: 4rem;
+	}
+
+	.problem__title {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(2rem, 3.5vw, 3.2rem);
+		font-weight: 700;
+		line-height: 1.15;
+		margin: 0;
+		color: #1a1a1a;
+		letter-spacing: 1.5px;
+	}
+
+	.problem__title-line {
+		display: block;
+		opacity: 0;
+		transform: translateY(20px);
+		animation: fadeSlideUp 0.7s ease forwards;
+	}
+
+	.problem__title-line:nth-child(1) {
+		animation-delay: 0.1s;
+	}
+
+	.problem__title-line:nth-child(2) {
+		animation-delay: 0.3s;
+	}
+
+	.problem__title-line:nth-child(3) {
+		animation-delay: 0.5s;
+	}
+
+	.problem__title-line--highlight {
+		color: #ff4d00;
+	}
+
+	.problem__description {
+		font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+		color: #444444;
+		line-height: 1.7;
+		margin: 0;
+		max-width: 520px;
+		opacity: 0;
+		transform: translateY(15px);
+		animation: fadeSlideUp 0.7s ease forwards;
+		animation-delay: 0.7s;
+	}
+
+	.problem__subtitle {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(1rem, 1.3vw, 1.2rem);
+		font-weight: 700;
+		color: #1a1a1a;
+		margin: 0;
+	}
+
+	.problem__stats {
+		display: flex;
+		gap: 2.5rem;
+		margin-top: 0.5rem;
+	}
+
+	.problem__stat {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.problem__stat-number {
+		display: flex;
+		align-items: baseline;
+		font-family: 'Chreed', 'Impact', sans-serif;
+		font-size: clamp(2.2rem, 3.5vw, 3rem);
+		font-weight: 700;
+		color: #ff4d00;
+		line-height: 1;
+	}
+
+	.problem__stat-prefix {
+		font-size: inherit;
+	}
+
+	.problem__stat-suffix {
+		font-size: 0.45em;
+		margin-left: 2px;
+		color: #ff4d00;
+	}
+
+	.problem__stat-label {
+		font-size: 0.85rem;
+		color: #444444;
+		margin-top: 0.25rem;
+	}
+
+	.problem__cta {
+		display: inline-block;
+		padding: 0.85rem 2rem;
+		border: 2px solid #1a1a1a;
+		color: #1a1a1a;
+		text-decoration: none;
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		border-radius: 4px;
+		margin-top: 0.5rem;
+	}
+
+	.problem__cta:hover {
+		background-color: #1a1a1a;
+		color: #ffffff;
+	}
+
+	.problem__image {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		align-self: stretch;
+		overflow: hidden;
+	}
+
+	.problem__image-frame {
+		position: relative;
+		opacity: 0;
+		animation: fadeIn 0.8s ease forwards;
+		animation-delay: 0.4s;
+		display: flex;
+		align-items: flex-end;
+		height: 100%;
+	}
+
+	.problem__image-frame::before {
+		content: '';
+		position: absolute;
+		top: 10%;
+		right: -8%;
+		width: 75%;
+		height: 80%;
+		border: 2px solid rgba(100, 150, 220, 0.4);
+		border-radius: 4px;
+		pointer-events: none;
+	}
+
+	.problem__person {
+		position: relative;
+		width: 100%;
+		max-width: 480px;
+		height: auto;
+		display: block;
+	}
+
+	@keyframes fadeSlideUp {
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		to {
+			opacity: 1;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.problem {
+			padding: 0 2rem;
+		}
+
+		.problem__container {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding-top: 3rem;
+		}
+
+		.problem__text {
+			padding-bottom: 2rem;
+		}
+
+		.problem__stats {
+			flex-wrap: wrap;
+			gap: 1.5rem;
+		}
+
+		.problem__image {
+			order: 1;
+		}
+
+		.problem__person {
+			max-width: 320px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.problem {
+			padding: 0 6rem;
+		}
+
+		.problem__container {
+			max-width: 1400px;
+			gap: 5rem;
+			padding-top: 5rem;
+		}
+
+		.problem__text {
+			padding-bottom: 5rem;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.problem {
+			padding: 0 8rem;
+		}
+
+		.problem__container {
+			max-width: 1600px;
+			padding-top: 6rem;
+		}
+
+		.problem__text {
+			padding-bottom: 6rem;
+		}
+
+		.problem__person {
+			max-width: 560px;
+		}
+	}
+</style>
+
+<script>
+	function formatNumber(num: number, format?: string): string {
+		if (format === 'dots') {
+			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+		}
+		return num.toString();
+	}
+
+	function animateCounter(el: HTMLElement) {
+		const target = parseInt(el.dataset.target || '0', 10);
+		const format = el.dataset.format;
+		const duration = 2000;
+		const startTime = performance.now();
+
+		function update(currentTime: number) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+			const eased = 1 - Math.pow(1 - progress, 3);
+			const current = Math.round(eased * target);
+
+			el.textContent = formatNumber(current, format);
+
+			if (progress < 1) {
+				requestAnimationFrame(update);
+			} else {
+				el.textContent = formatNumber(target, format);
+			}
+		}
+
+		requestAnimationFrame(update);
+	}
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const counters = entry.target.querySelectorAll<HTMLElement>('.problem__stat-value');
+					counters.forEach((counter) => animateCounter(counter));
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{ threshold: 0.3 }
+	);
+
+	const statsSection = document.querySelector('.problem__stats');
+	if (statsSection) {
+		observer.observe(statsSection);
+	}
+</script>

@@ -1,0 +1,306 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero-home.png';
+import marca1 from '../assets/marca-1.png';
+import marca2 from '../assets/marca-2.png';
+import marca3 from '../assets/marca-3.png';
+import marca4 from '../assets/marca-4.png';
+import marca5 from '../assets/marca-5.png';
+import marca6 from '../assets/marca-6.png';
+import marca7 from '../assets/marca-7.png';
+
+const marcas = [
+	{ src: marca1, alt: 'Incolmotos Yamaha' },
+	{ src: marca2, alt: 'AKT Motos' },
+	{ src: marca3, alt: 'Royal Enfield' },
+	{ src: marca4, alt: 'Suzuki' },
+	{ src: marca5, alt: 'Hero' },
+	{ src: marca6, alt: 'Marca 6' },
+	{ src: marca7, alt: 'Marca 7' },
+];
+---
+
+<section class="hero" id="inicio">
+	<div class="hero__background">
+		<Image src={heroImage} alt="Motocicleta con asiento Thermoliner" class="hero__bg-image" />
+	</div>
+
+	<div class="hero__content">
+		<div class="hero__text">
+			<h1 class="hero__title">
+				¡QUE EL CALOR
+				<span class="hero__title--highlight">NO TE DETENGA!</span>
+			</h1>
+			<p class="hero__description">
+				Asientos diseñados para reducir la temperatura y mejorar el rendimiento en cada kilómetro.
+			</p>
+			<a href="#" class="hero__cta">DESCUBRE LA DIFERENCIA</a>
+		</div>
+	</div>
+
+	<div class="hero__fade"></div>
+	<div class="hero__brands">
+		<div class="hero__brands-slider">
+			<div class="hero__brands-track">
+				{marcas.map((marca) => (
+					<div class="hero__brand-item">
+						<Image src={marca.src} alt={marca.alt} class="hero__brand-logo" />
+					</div>
+				))}
+				{marcas.map((marca) => (
+					<div class="hero__brand-item" aria-hidden="true">
+						<Image src={marca.src} alt={marca.alt} class="hero__brand-logo" />
+					</div>
+				))}
+				{marcas.map((marca) => (
+					<div class="hero__brand-item" aria-hidden="true">
+						<Image src={marca.src} alt={marca.alt} class="hero__brand-logo" />
+					</div>
+				))}
+				{marcas.map((marca) => (
+					<div class="hero__brand-item" aria-hidden="true">
+						<Image src={marca.src} alt={marca.alt} class="hero__brand-logo" />
+					</div>
+				))}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	.hero__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.hero__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero__content {
+		position: relative;
+		z-index: 1;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 2rem 4rem;
+		max-width: 600px;
+	}
+
+	.hero__text {
+		margin-top: 4rem;
+	}
+
+	.hero__title {
+		font-size: clamp(2.5rem, 5vw, 5.5rem);
+		font-weight: 700;
+		color: #ffffff;
+		line-height: 1.1;
+		margin: 0 0 1.5rem;
+		text-transform: uppercase;
+		font-family: 'Chreed', 'Impact', sans-serif;
+		letter-spacing: 1px;
+	}
+
+	.hero__title--highlight {
+		display: block;
+		color: #ff4d00;
+	}
+
+	.hero__description {
+		font-size: clamp(0.9rem, 1.2vw, 1.25rem);
+		color: #cccccc;
+		line-height: 1.6;
+		margin: 0 0 2rem;
+		max-width: 500px;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.85);
+	}
+
+	.hero__cta {
+		display: inline-block;
+		padding: clamp(0.75rem, 1vw, 1.1rem) clamp(1.5rem, 2vw, 2.5rem);
+		border: 2px solid #ffffff;
+		color: #ffffff;
+		text-decoration: none;
+		font-size: clamp(0.8rem, 0.9vw, 1rem);
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		border-radius: 4px;
+	}
+
+	.hero__cta:hover {
+		background-color: #ffffff;
+		color: #0a0a0a;
+	}
+
+	.hero__fade {
+		position: relative;
+		z-index: 1;
+		height: 80px;
+		margin-bottom: -1px;
+		background: linear-gradient(to bottom, transparent, #000000);
+		pointer-events: none;
+	}
+
+	.hero__brands {
+		position: relative;
+		z-index: 1;
+		background-color: #000000;
+		padding: 1.5rem 0;
+		overflow: hidden;
+	}
+
+	.hero__brands-slider {
+		position: relative;
+		width: 100%;
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+	}
+
+	.hero__brands-track {
+		display: flex;
+		align-items: center;
+		gap: 4rem;
+		width: max-content;
+		animation: scroll 30s linear infinite;
+		will-change: transform;
+	}
+
+	.hero__brand-item {
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 1rem;
+	}
+
+	.hero__brand-logo {
+		height: 35px;
+		width: auto;
+		object-fit: contain;
+		filter: brightness(0) invert(1);
+		opacity: 0.8;
+		transition: opacity 0.3s ease;
+	}
+
+	.hero__brand-logo:hover {
+		opacity: 1;
+	}
+
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-25%);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero__content {
+			padding: 2rem;
+		}
+
+		.hero__logo {
+			top: 1.5rem;
+			left: 2rem;
+		}
+
+		.hero__logo img {
+			width: 150px;
+		}
+
+		.hero__title {
+			font-size: 2rem;
+		}
+
+		.hero__brands-track {
+			gap: 3rem;
+			animation-duration: 22s;
+		}
+
+		.hero__brand-logo {
+			height: 25px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.hero__content {
+			padding: 3rem 6rem;
+			max-width: 800px;
+		}
+
+		.hero__logo {
+			top: 3rem;
+			left: 6rem;
+		}
+
+		.hero__logo img {
+			width: 250px;
+		}
+
+		.hero__brand-logo {
+			height: 45px;
+		}
+
+		.hero__brands {
+			padding: 2rem 0;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.hero__content {
+			padding: 4rem 8rem;
+			max-width: 1000px;
+		}
+
+		.hero__logo {
+			top: 3.5rem;
+			left: 8rem;
+		}
+
+		.hero__logo img {
+			width: 300px;
+		}
+
+		.hero__brand-logo {
+			height: 55px;
+		}
+
+		.hero__brands {
+			padding: 2.5rem 0;
+		}
+
+		.hero__brands-track {
+			gap: 5rem;
+		}
+	}
+</style>

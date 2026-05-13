@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg-home-5.png';
+---
+
+<section class="oem" id="oem">
+	<div class="oem__background">
+		<Image src={bgImage} alt="" class="oem__bg-image" />
+	</div>
+
+	<div class="oem__container">
+		<div class="oem__content">
+			<span class="oem__eyebrow">CONVIERTE EL ASIENTO EN UNA VENTAJA COMPETITIVA</span>
+			<h2 class="oem__title">
+				El asiento no es un detalle.<br />
+				<span class="oem__title--highlight">Es parte de la percepción</span><br />
+				de calidad de la moto.
+			</h2>
+			<p class="oem__description">
+				Desarrollamos e integramos tecnología térmica y ergonómica directamente en tu línea de producción para elevar el valor de tu portafolio.
+			</p>
+			<a href="/contacto" class="oem__cta">INICIAR PROYECTO OEM</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.oem {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.oem__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.oem__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right center;
+	}
+
+	.oem__container {
+		position: relative;
+		z-index: 1;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 8rem 4rem;
+	}
+
+	.oem__content {
+		max-width: 550px;
+	}
+
+	.oem__eyebrow {
+		display: block;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		color: #ff4d00;
+		margin-bottom: 1rem;
+	}
+
+	.oem__title {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(1.8rem, 3vw, 2.8rem);
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 1.5rem;
+		color: #ffffff;
+		letter-spacing: 0.5px;
+	}
+
+	.oem__title--highlight {
+		color: #ff4d00;
+	}
+
+	.oem__description {
+		font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+		color: #cccccc;
+		line-height: 1.7;
+		margin: 0 0 2rem;
+		max-width: 420px;
+	}
+
+	.oem__cta {
+		display: inline-block;
+		padding: 0.85rem 2rem;
+		border: 2px solid #ffffff;
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		border-radius: 4px;
+	}
+
+	.oem__cta:hover {
+		background-color: #ffffff;
+		color: #0a0a0a;
+	}
+
+	@media (max-width: 768px) {
+		.oem__container {
+			padding: 3rem 2rem;
+		}
+
+		.oem__title {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.oem__container {
+			max-width: 1400px;
+			padding: 6rem;
+		}
+
+		.oem__content {
+			max-width: 650px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.oem__container {
+			max-width: 1600px;
+			padding: 7rem 8rem;
+		}
+
+		.oem__content {
+			max-width: 750px;
+		}
+	}
+</style>

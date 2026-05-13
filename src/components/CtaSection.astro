@@ -1,0 +1,121 @@
+---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg-home-4.png';
+---
+
+<section class="cta">
+	<div class="cta__background">
+		<Image src={bgImage} alt="" class="cta__bg-image" />
+	</div>
+
+	<div class="cta__container">
+		<div class="cta__content">
+			<h2 class="cta__title">
+				Da el paso de Integrar<br />
+				la <span class="cta__title--highlight">Tecnología Thermoliner</span> en tu<br />
+				Próxima Generación de Vehículos.
+			</h2>
+			<a href="/contacto" class="cta__button">AGENDA UNA CONSULTA TÉCNICA</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cta {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		margin-top: -30px;
+		clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 100%);
+	}
+
+	.cta__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.cta__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right center;
+	}
+
+	.cta__container {
+		position: relative;
+		z-index: 1;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem;
+	}
+
+	.cta__content {
+		max-width: 550px;
+	}
+
+	.cta__title {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 0 0 2rem;
+		color: #ffffff;
+		letter-spacing: 0.5px;
+	}
+
+	.cta__title--highlight {
+		color: #ff4d00;
+	}
+
+	.cta__button {
+		display: inline-block;
+		padding: 0.85rem 2rem;
+		border: 2px solid #ffffff;
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		border-radius: 4px;
+	}
+
+	.cta__button:hover {
+		background-color: #ffffff;
+		color: #0a0a0a;
+	}
+
+	@media (max-width: 768px) {
+		.cta__container {
+			padding: 3rem 2rem;
+		}
+
+		.cta__title {
+			font-size: 1.3rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.cta__container {
+			max-width: 1400px;
+			padding: 5rem 6rem;
+		}
+
+		.cta__content {
+			max-width: 650px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.cta__container {
+			max-width: 1600px;
+			padding: 6rem 8rem;
+		}
+
+		.cta__content {
+			max-width: 750px;
+		}
+	}
+</style>

@@ -1,0 +1,300 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-thermoliner.png';
+---
+
+<footer class="footer">
+	<div class="footer__container">
+		<div class="footer__form-section">
+			<h2 class="footer__form-title">Escríbenos</h2>
+			<p class="footer__form-description">¿Interesado en nuestra tecnología para tu moto o buscas una alianza comercial B2B? Déjanos tus datos y un especialista se pondrá en contacto contigo.</p>
+			<form class="footer__form" action="#" method="POST">
+				<div class="footer__form-group">
+					<input type="text" name="name" placeholder="Nombre completo" required class="footer__input" />
+				</div>
+				<div class="footer__form-group">
+					<input type="email" name="email" placeholder="Correo electrónico" required class="footer__input" />
+				</div>
+				<div class="footer__form-group">
+					<input type="tel" name="phone" placeholder="Teléfono" class="footer__input" />
+				</div>
+				<div class="footer__form-group">
+					<input type="text" name="company" placeholder="Empresa" class="footer__input" />
+				</div>
+				<div class="footer__form-group">
+					<textarea name="message" placeholder="Mensaje" rows="4" required class="footer__textarea"></textarea>
+				</div>
+				<button type="submit" class="footer__submit">ENVIAR MENSAJE</button>
+			</form>
+		</div>
+
+		<div class="footer__info-section">
+			<h2 class="footer__info-title">Ubicación y Contacto</h2>
+
+			<div class="footer__info-items">
+				<div class="footer__info-item">
+					<svg class="footer__info-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+						<circle cx="12" cy="10" r="3"></circle>
+					</svg>
+					<p class="footer__info-text">Autopista Medellín - Bogotá Km 22 Parque Industrial La Brizuela - 054050</p>
+				</div>
+				<div class="footer__info-item">
+					<svg class="footer__info-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="4" width="20" height="16" rx="2"></rect>
+						<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+					</svg>
+					<a href="mailto:contacto@thermolinerseats.com" class="footer__info-link">contacto@thermolinerseats.com</a>
+				</div>
+			</div>
+
+			<div class="footer__socials">
+				<a href="#" class="footer__social-link" aria-label="Instagram">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+						<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+						<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+					</svg>
+				</a>
+				<a href="#" class="footer__social-link" aria-label="Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+					</svg>
+				</a>
+				<a href="#" class="footer__social-link" aria-label="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+						<rect x="2" y="9" width="4" height="12"></rect>
+						<circle cx="4" cy="4" r="2"></circle>
+					</svg>
+				</a>
+				<a href="#" class="footer__social-link" aria-label="YouTube">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+						<polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+					</svg>
+				</a>
+			</div>
+
+			<div class="footer__logo">
+				<Image src={logo} alt="Thermoliner Seats" width={160} height={32} />
+			</div>
+		</div>
+	</div>
+
+	<div class="footer__bottom">
+		<p class="footer__copyright">© 2025 Thermoliner Seats. Todos los derechos reservados.</p>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background-color: #000000;
+		width: 100%;
+		padding: 5rem 4rem 2rem;
+	}
+
+	.footer__container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 5rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	/* Form section */
+	.footer__form-title {
+		font-family: 'Chreed', 'Impact', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0 0 1rem;
+		letter-spacing: 1px;
+	}
+
+	.footer__form-description {
+		font-size: 0.9rem;
+		color: #aaaaaa;
+		line-height: 1.6;
+		margin: 0 0 2rem;
+	}
+
+	.footer__form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.footer__input,
+	.footer__textarea {
+		width: 100%;
+		padding: 0.9rem 1.2rem;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 6px;
+		color: #ffffff;
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: 0.9rem;
+		transition: border-color 0.3s ease;
+		outline: none;
+		box-sizing: border-box;
+	}
+
+	.footer__input::placeholder,
+	.footer__textarea::placeholder {
+		color: #888888;
+	}
+
+	.footer__input:focus,
+	.footer__textarea:focus {
+		border-color: #ff4d00;
+	}
+
+	.footer__textarea {
+		resize: vertical;
+		min-height: 100px;
+	}
+
+	.footer__submit {
+		display: block;
+		padding: 1rem 2rem;
+		background: #ff4d00;
+		border: none;
+		color: #ffffff;
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		cursor: pointer;
+		border-radius: 4px;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.footer__submit:hover {
+		background-color: #e04400;
+		transform: translateY(-2px);
+	}
+
+	/* Info section */
+	.footer__info-title {
+		font-family: 'Chreed', 'Impact', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0 0 2rem;
+		letter-spacing: 1px;
+	}
+
+	.footer__info-items {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.footer__info-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+
+	.footer__info-icon {
+		color: #999999;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	.footer__info-text {
+		font-size: 0.95rem;
+		color: #cccccc;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.footer__info-link {
+		font-size: 0.95rem;
+		color: #cccccc;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.footer__info-link:hover {
+		color: #ff4d00;
+	}
+
+	.footer__socials {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.footer__social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		color: #cccccc;
+		transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+	}
+
+	.footer__social-link:hover {
+		color: #ff4d00;
+		border-color: #ff4d00;
+		background-color: rgba(255, 77, 0, 0.08);
+	}
+
+	.footer__logo img {
+		opacity: 0.7;
+	}
+
+	/* Bottom */
+	.footer__bottom {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+		text-align: center;
+	}
+
+	.footer__copyright {
+		font-size: 0.8rem;
+		color: #666666;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.footer {
+			padding: 3rem 2rem 2rem;
+		}
+
+		.footer__container {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.footer {
+			padding: 6rem 6rem 2rem;
+		}
+
+		.footer__container {
+			max-width: 1400px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.footer {
+			padding: 7rem 8rem 2rem;
+		}
+
+		.footer__container {
+			max-width: 1600px;
+		}
+	}
+</style>

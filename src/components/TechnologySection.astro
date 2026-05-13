@@ -1,0 +1,199 @@
+---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg-home-3.png';
+---
+
+<section class="tech">
+	<div class="tech__background">
+		<Image src={bgImage} alt="" class="tech__bg-image" />
+	</div>
+
+	<div class="tech__container">
+		<div class="tech__content">
+			<h2 class="tech__title">
+				<span class="tech__title--highlight">Tecnología</span> diseñada<br />
+				para <span class="tech__title--highlight">condiciones reales</span>
+			</h2>
+
+			<p class="tech__description">
+				Integramos <strong>Thermoliner Technology, Confort Mesh</strong> y <strong>Poliuretano</strong> de alta densidad para transformar tu experiencia de manejo.
+			</p>
+
+			<ul class="tech__features">
+				<li class="tech__feature">
+					<div class="tech__feature-header">
+						<span class="tech__feature-title">Thermoliner Technology</span>
+						<span class="tech__feature-dot"></span>
+					</div>
+					<p class="tech__feature-text">Reduce la acumulación de calor, garantizando hasta un 30% menos de temperatura superficial.</p>
+				</li>
+				<li class="tech__feature">
+					<div class="tech__feature-header">
+						<span class="tech__feature-title">Confort Mesh</span>
+						<span class="tech__feature-dot"></span>
+					</div>
+					<p class="tech__feature-text">Mejora la posición y distribución de presión, brindando confort superior sin perder firmeza.</p>
+				</li>
+				<li class="tech__feature">
+					<div class="tech__feature-header">
+						<span class="tech__feature-title">Poliuretano de Alta Densidad</span>
+						<span class="tech__feature-dot"></span>
+					</div>
+					<p class="tech__feature-text">Proporciona soporte constante y durabilidad; un núcleo que no se deforma con el uso prolongado.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<style>
+	.tech {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		margin-top: -30px;
+		clip-path: polygon(0 30px, 100% 0, 100% 100%, 0 100%);
+	}
+
+	.tech__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.tech__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: left center;
+	}
+
+	.tech__container {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: flex-end;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 5rem 0 5rem 4rem;
+	}
+
+	.tech__content {
+		max-width: 480px;
+		text-align: right;
+		background-color: rgba(255, 255, 255, 0.92);
+		padding: 3rem;
+		clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+	}
+
+	.tech__title {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(1.8rem, 3vw, 2.8rem);
+		font-weight: 700;
+		line-height: 1.2;
+		margin: 0 0 1.5rem;
+		color: #1a1a1a;
+		letter-spacing: 1.5px;
+	}
+
+	.tech__title--highlight {
+		color: #ff4d00;
+	}
+
+	.tech__description {
+		font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+		color: #444444;
+		line-height: 1.7;
+		margin: 0 0 2.5rem;
+	}
+
+	.tech__description strong {
+		color: #1a1a1a;
+	}
+
+	.tech__features {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.tech__feature {
+		text-align: right;
+	}
+
+	.tech__feature-header {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.5rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.tech__feature-title {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #1a1a1a;
+	}
+
+	.tech__feature-dot {
+		width: 10px;
+		height: 10px;
+		background-color: #ff4d00;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	.tech__feature-text {
+		font-size: 0.95rem;
+		color: #555555;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 768px) {
+		.tech__container {
+			padding: 3rem 0 3rem 0;
+			justify-content: center;
+		}
+
+		.tech__content {
+			max-width: 100%;
+			text-align: center;
+			clip-path: none;
+			padding: 2.5rem 2rem;
+		}
+
+		.tech__feature {
+			text-align: center;
+		}
+
+		.tech__feature-header {
+			justify-content: center;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.tech__container {
+			max-width: 1400px;
+			padding: 6rem;
+		}
+
+		.tech__content {
+			max-width: 550px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.tech__container {
+			max-width: 1600px;
+			padding: 8rem;
+		}
+
+		.tech__content {
+			max-width: 620px;
+		}
+	}
+</style>

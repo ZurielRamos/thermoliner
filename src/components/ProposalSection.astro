@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg-home-7.png';
+---
+
+<section class="proposal">
+	<div class="proposal__background">
+		<Image src={bgImage} alt="" class="proposal__bg-image" />
+	</div>
+
+	<div class="proposal__container">
+		<div class="proposal__card">
+			<h2 class="proposal__title">
+				Nuestra propuesta institucional<br />
+				<span class="proposal__title--highlight">se resume en una premisa clara:</span>
+			</h2>
+			<p class="proposal__description">
+				La infraestructura de producción está preparada para homologar matrices, espumas y recubrimientos bajo los estrictos tiempos, tolerancias y normativas de calidad que exige la cadena de suministro automotriz.
+			</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.proposal {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		min-height: 80vh;
+	}
+
+	.proposal__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.proposal__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.proposal__container {
+		position: relative;
+		z-index: 1;
+		padding: 12rem 4rem;
+	}
+
+	.proposal__card {
+		background: rgba(255, 255, 255, 0.93);
+		padding: 2.5rem 3rem;
+		max-width: 550px;
+		border-radius: 4px;
+	}
+
+	.proposal__title {
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: clamp(1.5rem, 2.5vw, 2rem);
+		font-weight: 700;
+		line-height: 1.3;
+		margin: 0 0 1.2rem;
+		color: #1a1a1a;
+		letter-spacing: 0.5px;
+	}
+
+	.proposal__title--highlight {
+		color: #ff4d00;
+	}
+
+	.proposal__description {
+		font-size: clamp(0.9rem, 1.1vw, 1rem);
+		color: #444444;
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.proposal__container {
+			padding: 3rem 2rem;
+		}
+
+		.proposal__card {
+			max-width: 100%;
+			padding: 2rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.proposal__container {
+			padding: 6rem;
+		}
+
+		.proposal__card {
+			max-width: 620px;
+			padding: 3rem 3.5rem;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.proposal__container {
+			padding: 8rem;
+		}
+
+		.proposal__card {
+			max-width: 700px;
+		}
+	}
+</style>

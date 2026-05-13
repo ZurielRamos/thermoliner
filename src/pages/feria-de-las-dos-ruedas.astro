@@ -1,0 +1,404 @@
+---
+import { Image } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+import bgFeria from '../assets/bg-feria.png';
+---
+
+<Layout>
+	<Header />
+	<main class="feria">
+		<section class="feria__hero">
+			<div class="feria__hero-bg">
+				<Image src={bgFeria} alt="" class="feria__hero-bg-image" />
+			</div>
+			<div class="feria__hero-content">
+				<span class="feria__hero-badge">¡2 Motos, 2 Ganadores!</span>
+				<h1 class="feria__hero-title">¡<span class="feria__hero-title--highlight">Gana</span> tu próxima moto con <span class="feria__hero-title--highlight">Thermoliner</span> en la Feria de las 2 Ruedas!</h1>
+				<p class="feria__hero-subtitle">
+					Vive la máxima tecnología en reducción de temperatura y ergonomía. Visita nuestro stand en Medellín, conoce la <strong>Thermoliner Technology</strong> y participa en el gran sorteo de <strong>2 motos</strong> para premiar tu pasión por rodar.
+				</p>
+				<a href="#participar" class="feria__hero-cta">¡Quiero participar ahora!</a>
+			</div>
+		</section>
+
+		<section class="feria__form-section" id="participar">
+			<div class="feria__form-container">
+				<div class="feria__form-info">
+					<h2 class="feria__form-title">Participa en el sorteo</h2>
+					<p class="feria__form-description">Regístrate con tus datos y queda inscrito automáticamente en el sorteo de 2 motos. Los ganadores se anunciarán en nuestro stand durante la Feria de las 2 Ruedas en Medellín.</p>
+					<ul class="feria__form-steps">
+						<li>
+							<span class="feria__form-step-number">1</span>
+							<span>Llena el formulario con tus datos</span>
+						</li>
+						<li>
+							<span class="feria__form-step-number">2</span>
+							<span>Visita nuestro stand en la feria</span>
+						</li>
+						<li>
+							<span class="feria__form-step-number">3</span>
+							<span>¡Participa por una de las 2 motos!</span>
+						</li>
+					</ul>
+
+					<div class="feria__socials">
+						<a href="#" aria-label="Instagram">
+							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+						<a href="#" aria-label="Facebook">
+							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+							</svg>
+						</a>
+						<a href="#" aria-label="TikTok">
+							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+							</svg>
+						</a>
+						<a href="#" aria-label="YouTube">
+							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+								<polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+							</svg>
+						</a>
+					</div>
+				</div>
+
+				<form class="feria__form" action="#" method="POST">
+					<div class="feria__form-group">
+						<input type="text" name="name" placeholder="Nombre completo" required class="feria__input" />
+					</div>
+					<div class="feria__form-group">
+						<input type="email" name="email" placeholder="Correo electrónico" required class="feria__input" />
+					</div>
+					<div class="feria__form-group">
+						<input type="tel" name="phone" placeholder="Teléfono / WhatsApp" required class="feria__input" />
+					</div>
+					<div class="feria__form-group">
+						<input type="text" name="city" placeholder="Ciudad" class="feria__input" />
+					</div>
+					<div class="feria__form-group">
+						<select name="moto" required class="feria__input">
+							<option value="" disabled selected>¿Qué marca de moto tienes?</option>
+							<option value="yamaha">Yamaha</option>
+							<option value="akt">AKT</option>
+							<option value="royal-enfield">Royal Enfield</option>
+							<option value="suzuki">Suzuki</option>
+							<option value="hero">Hero</option>
+							<option value="otra">Otra</option>
+						</select>
+					</div>
+					<div class="feria__form-check">
+						<input type="checkbox" id="terms" name="terms" required />
+						<label for="terms">Acepto los términos y condiciones del concurso</label>
+					</div>
+					<button type="submit" class="feria__form-submit">¡QUIERO PARTICIPAR!</button>
+				</form>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style is:global>
+	.feria__hero {
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		background-color: #000000;
+	}
+
+	.feria__hero-bg {
+		position: absolute;
+		inset: -10px;
+		z-index: 0;
+	}
+
+	.feria__hero-bg::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+		z-index: 1;
+	}
+
+	.feria__hero-bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.feria__hero-content {
+		position: relative;
+		z-index: 2;
+		padding: 8rem 4rem 4rem;
+		max-width: 700px;
+	}
+
+	.feria__hero-badge {
+		display: inline-block;
+		background-color: #ff4d00;
+		color: #ffffff;
+		font-size: 0.9rem;
+		font-weight: 700;
+		padding: 0.5rem 1.2rem;
+		border-radius: 4px;
+		margin-bottom: 1.5rem;
+		letter-spacing: 0.5px;
+	}
+
+	.feria__hero-title {
+		font-family: 'Chreed', 'Impact', sans-serif;
+		font-size: clamp(2.5rem, 5vw, 4.5rem);
+		font-weight: 700;
+		color: #ffffff;
+		line-height: 1.1;
+		margin: 0 0 1.5rem;
+		letter-spacing: 1px;
+	}
+
+	.feria__hero-subtitle {
+		font-size: clamp(1rem, 1.2vw, 1.15rem);
+		color: #cccccc;
+		line-height: 1.7;
+		margin: 0 0 2.5rem;
+		max-width: 580px;
+	}
+
+	.feria__hero-subtitle strong {
+		color: #ffffff;
+	}
+
+	.feria__hero-cta {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		background-color: #ff4d00;
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: 1px;
+		border-radius: 4px;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+	}
+
+	.feria__hero-cta:hover {
+		background-color: #e04400;
+		transform: translateY(-2px);
+	}
+
+	/* Form Section */
+	.feria__form-section {
+		background-color: #0a0a0a;
+		padding: 5rem 4rem;
+	}
+
+	.feria__form-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.feria__form-title {
+		font-family: 'Chreed', 'Impact', sans-serif;
+		font-size: 2rem;
+		font-weight: 700;
+		color: #ffffff;
+		margin: 0 0 1rem;
+		letter-spacing: 1px;
+	}
+
+	.feria__form-description {
+		font-size: 0.95rem;
+		color: #aaaaaa;
+		line-height: 1.7;
+		margin: 0 0 2rem;
+	}
+
+	.feria__form-steps {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	.feria__form-steps li {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		color: #cccccc;
+		font-size: 0.95rem;
+	}
+
+	.feria__form-step-number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		background-color: #ff4d00;
+		color: #ffffff;
+		font-weight: 700;
+		font-size: 0.85rem;
+		border-radius: 50%;
+		flex-shrink: 0;
+	}
+
+	.feria__socials {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.feria__socials a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		color: #cccccc;
+		transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+	}
+
+	.feria__socials a:hover {
+		color: #ff4d00;
+		border-color: #ff4d00;
+		background-color: rgba(255, 77, 0, 0.08);
+	}
+
+	.feria__form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		max-width: 100%;
+	}
+
+	.feria__form-group {
+		width: 100%;
+	}
+
+	.feria__input {
+		width: 100%;
+		padding: 0.9rem 1.2rem;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 6px;
+		color: #ffffff;
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: 0.9rem;
+		transition: border-color 0.3s ease;
+		outline: none;
+		appearance: none;
+		box-sizing: border-box;
+	}
+
+	.feria__input::placeholder {
+		color: #888888;
+	}
+
+	.feria__input:focus {
+		border-color: #ff4d00;
+	}
+
+	.feria__input option {
+		background-color: #1a1a1a;
+		color: #ffffff;
+	}
+
+	.feria__form-check {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.feria__form-check input[type="checkbox"] {
+		width: 16px;
+		height: 16px;
+		accent-color: #ff4d00;
+		cursor: pointer;
+	}
+
+	.feria__form-check label {
+		font-size: 0.8rem;
+		color: #888888;
+		cursor: pointer;
+	}
+
+	.feria__form-submit {
+		padding: 1rem 1.2rem;
+		background-color: #ff4d00;
+		border: 1px solid #ff4d00;
+		color: #ffffff;
+		font-family: 'Just Sans', system-ui, sans-serif;
+		font-size: 0.95rem;
+		font-weight: 700;
+		letter-spacing: 1.5px;
+		cursor: pointer;
+		border-radius: 6px;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+		margin-top: 0.5rem;
+		width: 100%;
+		display: block;
+		box-sizing: border-box;
+	}
+
+	.feria__form-submit:hover {
+		background-color: #e04400;
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 768px) {
+		.feria__hero-content {
+			padding: 7rem 2rem 3rem;
+		}
+
+		.feria__hero-title {
+			font-size: 2.2rem;
+		}
+
+		.feria__form-section {
+			padding: 3rem 2rem;
+		}
+
+		.feria__form-container {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.feria__hero-content {
+			padding: 10rem 6rem 5rem;
+			max-width: 850px;
+		}
+
+		.feria__form-section {
+			padding: 6rem;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		.feria__hero-content {
+			padding: 12rem 8rem 6rem;
+			max-width: 1000px;
+		}
+
+		.feria__form-section {
+			padding: 7rem 8rem;
+		}
+	}
+</style>
